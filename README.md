@@ -6,10 +6,10 @@ A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This pl
 ### Input
 The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be 0,0. The rest of the input is information pertaining to the rovers that have been deployed. Each rover has two lines of input. The first line gives the rover's position, and the second line is a series of instructions telling the rover how to explore the plateau.
 
-The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover's orientation. Each rover will be finished sequentially, which means that the second rover won't start to move until the first one has finished moving. Output: The output for each rover should be its final co-ordinates and heading.
+The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover's orientation. Each rover will be finished sequentially, which means that the second rover won't start to move until the first one has finished moving. Output: The output for each rover should be its final co-ordinates and heading. And this code can show where the robot is in matrix.
 
 ### Test Input
-![image](https://user-images.githubusercontent.com/79373487/183076086-8ecb968c-f653-412d-90af-3cd1824576f1.png)
+![image](https://user-images.githubusercontent.com/79373487/183076980-9c33377f-0f22-424f-8b03-769e1162025a.png)
 
 ### Excepted Output
-![image](https://user-images.githubusercontent.com/79373487/183076256-6f16ca40-aa5f-4f0b-91b0-a8d52c6a2d7d.png)
+![image](https://user-images.githubusercontent.com/79373487/183077052-bf973bb7-4ef0-4e06-8b10-4cfea87ef6c8.png)
