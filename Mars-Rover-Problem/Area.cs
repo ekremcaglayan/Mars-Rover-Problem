@@ -2,4 +2,31 @@
 {
     public int X { get; set; }
     public int Y { get; set; }
+
+    public static void ShowMatrix(Area currentArea, Robot currentRobot)
+    {
+        int i, j;
+
+        for (j = currentArea.Y - 1; j >= 0; j--)
+        {
+            for (i = 0; i < currentArea.X; i++)
+            {
+                //Console.Write(" ");
+                if (i == currentRobot.X && j == currentRobot.Y)
+                {
+                    ReportLocation();
+                }
+                else
+                {
+                    Console.Write(0 + " ");
+                }
+            }
+            Console.WriteLine();
+        }
+    }
+
+    static void ReportLocation()
+    {
+        Console.Write("P1" + " ");
+    }
 }

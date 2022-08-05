@@ -44,77 +44,24 @@ public static class Program
         foreach (Robot currentRobot in robots)
         {
             Console.WriteLine("----------------------");
-            ShowMatrix(currentArea, currentRobot);
+            Console.WriteLine("***BEFORE***");
+            Console.WriteLine("");
+            Area.ShowMatrix(currentArea, currentRobot);
             Console.WriteLine();
 
-            Movement(currentRobot);
+            Robot.Movement(currentRobot);
             RedirectDirection(currentRobot);
-            Console.WriteLine();
 
-            ShowMatrix(currentArea, currentRobot);
+            Console.WriteLine();
+            Area.ShowMatrix(currentArea, currentRobot);
+            Console.WriteLine("");
+            Console.WriteLine("***AFTER***");
             Console.WriteLine("----------------------");
         }
-    }
-
-    static void ShowMatrix(Area currentArea, Robot currentRobot)
-    {
-        int i, j;
-
-        for (j = currentArea.Y - 1; j >= 0; j--)
-        {
-            for (i = 0; i < currentArea.X; i++)
-            {
-                //Console.Write(" ");
-                if (i == currentRobot.X && j == currentRobot.Y)
-                {
-                    ReportLocation();
-                }
-                else
-                {
-                    Console.Write(0 + " ");
-                }
-            }
-            Console.WriteLine();
-        }
-    }
-
-    static void ReportLocation()
-    {
-        Console.Write("P1" + " ");
     }
 
     static void RedirectDirection(Robot robot)
     {
         Console.WriteLine("P1 new direction : " + robot.X + " " + robot.Y + " " + robot.Direction);
-    }
-
-    static void Movement(Robot robot)
-    {
-        foreach (char movementValue in robot.M)
-        {
-            switch (movementValue)
-            {
-                case 'M':
-                    if (robot.Direction == Direction.S) { robot.Y--; }
-                    else if (robot.Direction == Direction.N) { robot.Y++; }
-                    else if (robot.Direction == Direction.W) { robot.X--; }
-                    else if (robot.Direction == Direction.E) { robot.X++; }
-                    break;
-                case 'R':
-                    if (robot.Direction == Direction.S) { robot.Direction = Direction.W; }
-                    else if (robot.Direction == Direction.N) { robot.Direction = Direction.E; }
-                    else if (robot.Direction == Direction.W) { robot.Direction = Direction.N; }
-                    else if (robot.Direction == Direction.E) { robot.Direction = Direction.S; }
-                    break;
-                case 'L':
-                    if (robot.Direction == Direction.S) { robot.Direction = Direction.E; }
-                    else if (robot.Direction == Direction.N) { robot.Direction = Direction.W; }
-                    else if (robot.Direction == Direction.W) { robot.Direction = Direction.S; }
-                    else if (robot.Direction == Direction.E) { robot.Direction = Direction.N; }
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 }
