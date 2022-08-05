@@ -5,7 +5,7 @@ public static class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Alan değerini giriniz: ");
+        Console.Write("Enter the area value: ");
         string areaValues = Console.ReadLine();
 
         string movementValues = string.Empty;
@@ -15,9 +15,9 @@ public static class Program
 
         while (true)
         {
-            Console.Write("Mevcut konum değerini giriniz: ");
+            Console.Write("Enter the current position value: ");
             string robotValues = Console.ReadLine();
-            Console.Write("Nasıl ilerleyeceğini giriniz: ");
+            Console.Write("Enter how to move: ");
             movementValues = Console.ReadLine();
 
             currentArea.X = int.Parse(areaValues.Split(' ')[0]);
