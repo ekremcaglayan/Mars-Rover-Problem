@@ -5,20 +5,18 @@ public static class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Enter the area value: ");
+        Console.Write("Alan değerini giriniz: ");
         string areaValues = Console.ReadLine();
 
-        string movementValues = string.Empty;
         Area currentArea = new Area();
         List<Robot> robots = new List<Robot>();
-        Direction direction = Direction.N;
 
         while (true)
         {
-            Console.Write("Enter the current position value: ");
+            Console.Write("Mevcut konum değerini giriniz: ");
             string robotValues = Console.ReadLine();
-            Console.Write("Enter how to move: ");
-            movementValues = Console.ReadLine();
+            Console.Write("Nasıl ilerleyeceğini giriniz: ");
+            string movementValues = Console.ReadLine();
 
             currentArea.X = int.Parse(areaValues.Split(' ')[0]);
             currentArea.Y = int.Parse(areaValues.Split(' ')[1]);
@@ -27,7 +25,7 @@ public static class Program
             currentRobot.X = int.Parse(robotValues.Split(' ')[0]);
             currentRobot.Y = int.Parse(robotValues.Split(' ')[1]);
             currentRobot.M = movementValues;
-            Enum.TryParse(robotValues.Split(' ')[2], out direction);
+            Enum.TryParse(robotValues.Split(' ')[2], out Direction direction);
             currentRobot.Direction = direction;
 
             robots.Add(currentRobot);
@@ -46,14 +44,14 @@ public static class Program
             Console.WriteLine("----------------------");
             Console.WriteLine("***BEFORE***");
             Console.WriteLine("");
-            Area.ShowMatrix(currentArea, currentRobot);
+            currentArea.ShowMatrix(currentRobot);
             Console.WriteLine();
 
-            Robot.Movement(currentRobot);
+            currentRobot.Movement();
             RedirectDirection(currentRobot);
 
             Console.WriteLine();
-            Area.ShowMatrix(currentArea, currentRobot);
+            currentArea.ShowMatrix(currentRobot);
             Console.WriteLine("");
             Console.WriteLine("***AFTER***");
             Console.WriteLine("----------------------");

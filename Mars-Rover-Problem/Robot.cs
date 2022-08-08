@@ -5,17 +5,17 @@
     public int Y { get; set; }
     public string M { get; set; }
 
-    public static void Movement(Robot robot)
+    public void Movement()
     {
-        foreach (char movementValue in robot.M)
+        foreach (char movementValue in M)
         {
             switch (movementValue)
             {
-                case 'M': ChangeCoordinates(robot);
+                case 'M': ChangeCoordinates();
                     break;
-                case 'R': ChangeDirectionRight(robot);
+                case 'R': ChangeDirectionRight();
                     break;
-                case 'L': ChangeDirectionLeft(robot);
+                case 'L': ChangeDirectionLeft();
                     break;
                 default:
                     break;
@@ -23,51 +23,51 @@
         }
     }
 
-    static void ChangeDirectionRight(Robot robot)
+    public void ChangeDirectionRight()
     {
-        switch (robot.Direction)
+        switch (Direction)
         {
-            case Direction.S: robot.Direction = Direction.W;
+            case Direction.S: Direction = Direction.W;
                 break;
-            case Direction.N: robot.Direction = Direction.E;
+            case Direction.N: Direction = Direction.E;
                 break;
-            case Direction.W: robot.Direction = Direction.N;
+            case Direction.W: Direction = Direction.N;
                 break;
-            case Direction.E: robot.Direction = Direction.S;
+            case Direction.E: Direction = Direction.S;
                 break;
             default:
                 break;
         }
     }
 
-    static void ChangeDirectionLeft(Robot robot)
+    public void ChangeDirectionLeft()
     {
-        switch (robot.Direction)
+        switch (Direction)
         {
-            case Direction.S: robot.Direction = Direction.E;
+            case Direction.S: Direction = Direction.E;
                 break;
-            case Direction.N: robot.Direction = Direction.W;
+            case Direction.N: Direction = Direction.W;
                 break;
-            case Direction.W: robot.Direction = Direction.S;
+            case Direction.W: Direction = Direction.S;
                 break;
-            case Direction.E: robot.Direction = Direction.N;
+            case Direction.E: Direction = Direction.N;
                 break;
             default:
                 break;
         }
     }
 
-    static void ChangeCoordinates(Robot robot)
+    public void ChangeCoordinates()
     {
-        switch (robot.Direction)
+        switch (Direction)
         {
-            case Direction.S: robot.Y--;
+            case Direction.S: Y--;
                 break;
-            case Direction.N: robot.Y++;
+            case Direction.N: Y++;
                 break;
-            case Direction.W: robot.X--;
+            case Direction.W: X--;
                 break;
-            case Direction.E: robot.X++;
+            case Direction.E: X++;
                 break;
             default:
                 break;
