@@ -1,4 +1,4 @@
-﻿class Robot
+﻿class MiniRobot : IRobot
 {
     public Direction Direction { get; set; }
     public int X { get; set; }
@@ -13,9 +13,7 @@
             {
                 case 'M': ChangeCoordinates();
                     break;
-                case 'R': ChangeDirectionRight();
-                    break;
-                case 'L': ChangeDirectionLeft();
+                case 'B': TurnBack();
                     break;
                 default:
                     break;
@@ -23,34 +21,17 @@
         }
     }
 
-    public void ChangeDirectionRight()
+    public void TurnBack()
     {
         switch (Direction)
         {
-            case Direction.S: Direction = Direction.W;
+            case Direction.S: Direction = Direction.N;
                 break;
-            case Direction.N: Direction = Direction.E;
+            case Direction.N: Direction = Direction.S;
                 break;
-            case Direction.W: Direction = Direction.N;
+            case Direction.W: Direction = Direction.E;
                 break;
-            case Direction.E: Direction = Direction.S;
-                break;
-            default:
-                break;
-        }
-    }
-
-    public void ChangeDirectionLeft()
-    {
-        switch (Direction)
-        {
-            case Direction.S: Direction = Direction.E;
-                break;
-            case Direction.N: Direction = Direction.W;
-                break;
-            case Direction.W: Direction = Direction.S;
-                break;
-            case Direction.E: Direction = Direction.N;
+            case Direction.E: Direction = Direction.W;
                 break;
             default:
                 break;
@@ -74,3 +55,4 @@
         }
     }
 }
+

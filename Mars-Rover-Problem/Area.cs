@@ -3,7 +3,7 @@
     public int X { get; set; }
     public int Y { get; set; }
 
-    public void ShowMatrix(Robot currentRobot)
+    public void ShowMatrix(IRobot currentRobot)
     {
         int i, j;
 
