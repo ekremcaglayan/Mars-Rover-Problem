@@ -50,6 +50,7 @@ public static class Program
 
             Console.Write("Would you like to continue? (Y/N): ");
             string choice = Console.ReadLine();
+            Console.WriteLine("----------------------");
             Console.WriteLine("");
             if (choice == "N")
             {
